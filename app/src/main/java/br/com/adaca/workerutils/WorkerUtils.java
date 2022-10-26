@@ -14,11 +14,11 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class WorkerUtils {
-    public static Map<String, Object> prepareDataToBeAdded(List<Object> data) {
+    public static Map<String, Object> prepareDataToBeAdded(String key, List<Object> value) {
         Map<String, Object> dataMapped = new HashMap<>();
 
-        for (int index = 0; index < data.size(); index++) {
-            dataMapped.put("parameter"+ index, data.get(index));
+        for (int index = 0; index < value.size(); index++) {
+            dataMapped.put(key, value.get(index));
         }
 
         return dataMapped;
